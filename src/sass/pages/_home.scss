@@ -1,0 +1,60 @@
+.home {
+	flex: 1;
+	background-image: url(../../../assets/home/background-home-desktop.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	padding: 0 16.5rem 13.1rem;
+
+	.main-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 40rem;
+		height: 100%;
+
+		.text {
+			align-self: flex-end;
+			max-width: 45rem;
+			h5 {
+				font-weight: 400;
+				margin-bottom: 2.4rem;
+			}
+
+			h1 {
+				font-weight: 400;
+				margin-bottom: 2.4rem;
+			}
+
+			p {
+				max-width: 44.4rem;
+				color: var(--color-secondary);
+			}
+		}
+
+		.explore-btn {
+			align-self: flex-end;
+			justify-self: flex-end;
+			width: 27.4rem;
+			height: 27.4rem;
+			border-radius: 50%;
+			background: var(--text-color-01);
+			border: none;
+			outline: none;
+			position: relative;
+			cursor: pointer;
+			transition: box-shadow 0.3s ease;
+
+			a {
+				font-family: 'Bellefair', sans-serif;
+				font-weight: 400;
+				font-size: 3.2rem;
+				letter-spacing: 2px;
+				color: var(--color-primary);
+			}
+
+			&:hover {
+				box-shadow: 0 0 0 8.8rem var(--hover-color-01);
+			}
+		}
+	}
+}

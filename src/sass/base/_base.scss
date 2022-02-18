@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Bellefair&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+:root {
+	--color-primary: #0d0d17;
+	--color-secondary: #d0d6f9;
+	--text-color-01: #fff;
+	--hover-color-01: rgba(255, 255, 255, 0.1);
+	--hover-color-02: rgba(255, 255, 255, 0.5);
+	--navbar-bg: rgba(255, 255, 255, 0.04);
+	--line-color: rgba(255, 255, 255, 0.25);
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+body {
+	font-family: 'Bellefair', serif;
+	font-size: 1.6rem;
+	background: var(--color-primary);
+	color: var(--text-color-01);
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
