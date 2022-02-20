@@ -42,6 +42,11 @@ p {
 	font-size: 1.6rem;
 	font-weight: 400;
 	letter-spacing: 2.7px;
+
+	@include respond(tab-port) {
+		font-size: 1.4rem;
+		letter-spacing: 2.36px;
+	}
 }
 
 a {

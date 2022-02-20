@@ -6,13 +6,19 @@
 	}
 
 	@if $breakpoint == mobileS {
-		@media only screen and (max-width: 28.125em) {
+		@media only screen and (max-width: 25em) {
 			@content;
 		}
 	}
 
 	@if $breakpoint == mobile {
 		@media only screen and (max-width: 31.25em) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == bp-600 {
+		@media only screen and (max-width: 37.5em) {
 			@content;
 		}
 	}
@@ -25,6 +31,12 @@
 
 	@if $breakpoint == tab-land {
 		@media only screen and (max-width: 64em) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == bp-1200 {
+		@media only screen and (max-width: 75em) {
 			@content;
 		}
 	}
