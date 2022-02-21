@@ -1,51 +1,48 @@
-// HAMBURGER MENU
-const menuBtn = document.querySelector('.navbar-toggle');
-const sideBar = document.querySelector('.sidebar');
-const overlay = document.querySelector('.overlay');
+//*** MOBILE NAV TOGGLE ***//
+const primaryNav = document.getElementById('primary-navigation');
+const navToggle = document.querySelector('.mobile-nav-toggle');
 const navItems = document.querySelectorAll('.nav-items a');
-let menuOpen = false;
+const overlay = document.querySelector('.nav-overlay');
 
-menuBtn.addEventListener('click', () => {
-	if (!menuOpen) {
-		menuBtn.classList.add('open');
-		menuOpen = true;
-		sideBar.classList.add('active');
-		overlay.classList.add('active');
-	} else {
-		menuBtn.classList.remove('open');
-		menuOpen = false;
-		sideBar.classList.remove('active');
-		overlay.classList.remove('active');
+const openMobileNav = () => {
+	primaryNav.setAttribute('data-visible', true);
+	overlay.setAttribute('data-visible', true);
+	navToggle.setAttribute('aria-expanded', true);
+};
+
+const closeMobileNav = () => {
+	primaryNav.setAttribute('data-visible', false);
+	overlay.setAttribute('data-visible', false);
+	navToggle.setAttribute('aria-expanded', false);
+};
+
+navToggle.addEventListener('click', () => {
+	const visibility = primaryNav.getAttribute('data-visible');
+
+	if (visibility === 'false') {
+		openMobileNav();
+	} else if (visibility === 'true') {
+		closeMobileNav();
 	}
 });
 
 navItems.forEach((navItem) => {
 	navItem.addEventListener('click', () => {
-		menuBtn.classList.remove('open');
-		menuOpen = false;
-		sideBar.classList.remove('active');
-		overlay.classList.remove('active');
+		closeMobileNav();
 	});
 });
 
 document.addEventListener('click', (e) => {
-	if (e.target.classList.contains('overlay')) {
-		if (menuOpen) {
-			menuBtn.classList.remove('open');
-			menuOpen = false;
-			sideBar.classList.remove('active');
-			overlay.classList.remove('active');
-		}
+	if (e.target.classList.contains('nav-overlay')) {
+		closeMobileNav();
 	}
 });
 
 document.addEventListener('keydown', (e) => {
 	if (e.key === 'Escape') {
-		if (menuOpen) {
-			menuBtn.classList.remove('open');
-			menuOpen = false;
-			sideBar.classList.remove('active');
-			overlay.classList.remove('active');
+		const visibility = primaryNav.getAttribute('data-visible');
+		if (visibility === 'true') {
+			closeMobileNav();
 		}
 	}
 });
