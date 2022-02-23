@@ -47,4 +47,9 @@ p {
 		font-size: 1.4rem;
 		letter-spacing: 2.36px;
 	}
+
+	@include respond(bp-600) {
+		font-size: 1.6rem;
+		letter-spacing: 2.7px;
+	}
 }

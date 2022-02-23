@@ -26,10 +26,90 @@
 	border: 0;
 }
 
+.resize-animation-stopper * {
+	animation: none !important;
+	transition: none !important;
+}
+
+.container {
+	padding-inline: 2em;
+	margin-inline: auto;
+	max-width: 80rem;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns:
+		minmax(8rem, 1fr)
+		repeat(2, minmax(0, 114rem))
+		minmax(8rem, 1fr);
+	place-items: center;
+
+	@include respond(tab-port) {
+		text-align: center;
+		padding-inline: 2.4rem;
+		grid-template-columns: 1fr;
+	}
+}
+
+.grid-container > *:first-child {
+	grid-column: 2;
+
+	@include respond(tab-port) {
+		grid-column: unset;
+	}
+}
+
+.grid-container > *:last-child {
+	grid-column: 3;
+
+	@include respond(tab-land) {
+		justify-self: end;
+	}
+
+	@include respond(tab-port) {
+		grid-column: unset;
+		justify-self: unset;
+		align-self: end;
+	}
+}
+
+.intro-title {
+	h1 {
+		font-family: var(--ff-barlow-cond);
+		font-size: 2.8rem;
+		letter-spacing: 4.72px;
+		text-transform: uppercase;
+
+		@include respond(tab-port) {
+			font-size: 2rem;
+			letter-spacing: 3.38px;
+		}
+
+		@include respond(mobile) {
+			font-size: 1.6rem;
+			letter-spacing: 2.7px;
+			text-align: center;
+		}
+
+		span {
+			font-weight: 700;
+			color: var(--text-color-02);
+			margin-inline-end: 2.8rem;
+
+			@include respond(tab-port) {
+				margin-inline-end: 1.8rem;
+			}
+
+			@include respond(mobile) {
+				margin-inline-end: 1.6rem;
+			}
+		}
+	}
+}
+
 .home-body {
 	background-image: url(../../../assets/home/background-home-desktop.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 
 	@include respond(tab-port) {
 		background-image: url(../../../assets/home/background-home-tablet.jpg);
@@ -42,8 +122,6 @@
 
 .destination-body {
 	background-image: url(../../../assets/destination/background-destination-desktop.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 
 	@include respond(tab-port) {
 		background-image: url(../../../assets/destination/background-destination-tablet.jpg);
@@ -56,8 +134,6 @@
 
 .crew-body {
 	background-image: url(../../../assets/crew/background-crew-desktop.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 
 	@include respond(tab-port) {
 		background-image: url(../../../assets/crew/background-crew-tablet.jpg);
@@ -70,8 +146,6 @@
 
 .technology-body {
 	background-image: url(../../../assets/technology/background-technology-desktop.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 
 	@include respond(tab-port) {
 		background-image: url(../../../assets/technology/background-technology-tablet.jpg);

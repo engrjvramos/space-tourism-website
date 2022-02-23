@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>01 Destination - Space Tourism Website | Frontend Mentor</title>
+
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+</head>
+
+<body class="destination-body">
+
+  <header>
+    <!--======= LOGO =======-->
+    <div class="logo">
+      <a href="./index.html">
+        <img src="./assets/shared/logo.svg" alt="">
+      </a>
+    </div>
+
+    <!--======= HORIZONTAL LINE =======-->
+    <div class="hr"></div>
+
+    <!--======= NAV TOGGLE =======-->
+    <button aria-controls="primary-navigation" aria-expanded="false" class="mobile-nav-toggle">
+      <span class="sr-only">Menu</span>
+      <div class="hamburger"></div>
+    </button>
+
+    <!--======= PRIMARY-NAVIGATION =======-->
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul class="nav-items">
+        <li>
+          <a href="./index.html" class="nav-text">
+            <span aria-hidden="true">00</span>HOME
+          </a>
+        </li>
+        <li>
+          <a href="./destination-moon.html" class="nav-text active">
+            <span aria-hidden="true">01</span>DESTINATION
+          </a>
+        </li>
+        <li>
+          <a href="./crew-commander.html" class="nav-text">
+            <span aria-hidden="true">02</span>CREW
+          </a>
+        </li>
+        <li>
+          <a href="./technology-vehicle.html" class="nav-text">
+            <span aria-hidden="true">03</span>TECHNOLOGY
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--======= OVERLAY =======-->
+    <div data-visible="false" class="nav-overlay"></div>
+  </header>
+
+  <main class="grid-container--destination">
+    <!--======= INTRO TITLE =======-->
+    <div class="intro-title">
+      <h1><span>01</span>pick your destination</h1>
+    </div>
+
+    <!--======= CONTENT =======-->
+    <div class="content">
+      <div class="destination-img">
+        <img src="./assets/destination/image-moon.png" alt="">
+      </div>
+      <div class="destination-details">
+        <nav class="destination-nav">
+          <ul>
+            <li>
+              <a href="./destination-moon.html" class="active">MOON</a>
+            </li>
+            <li>
+              <a href="./destination-mars.html">MARS</a>
+            </li>
+            <li>
+              <a href="./destination-europa.html">EUROPA</a>
+            </li>
+            <li>
+              <a href="./destination-titan.html">TITAN</a>
+            </li>
+          </ul>
+        </nav>
+        <span>MOON</span>
+        <p class="destination-description">See our planet as you've never seen it before. A perfect relaxing trip
+          away
+          to help regain perspective and
+          come back refreshed. While you're there, take in some history by visiting Luna 2 and Apollo 11 landing
+          site.
+        </p>
+        <div class="distance-time-container">
+          <div class="avg-distance">
+            <p>avg. distance</p>
+            <p>384,000 KM</p>
+          </div>
+          <div class="travel-time">
+            <p>est. travel time</p>
+            <p>3 days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./src/js/script.js"></script>
+</body>
+
+</html>

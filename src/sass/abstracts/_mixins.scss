@@ -41,6 +41,12 @@
 		}
 	}
 
+	@if $breakpoint == bp-1400 {
+		@media only screen and (max-width: 87.5em) {
+			@content;
+		}
+	}
+
 	@if $breakpoint == laptop {
 		@media only screen and (max-width: 100em) {
 			@content;

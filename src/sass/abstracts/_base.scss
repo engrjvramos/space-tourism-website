@@ -9,15 +9,22 @@
 }
 
 :root {
-	--color-primary: #0d0d17;
-	--color-secondary: #d0d6f9;
+	--clr-primary: #0d0d17;
+	--clr-secondary: #d0d6f9;
+	--clr-white: #fff;
+
 	--text-color-01: #fff;
+	--text-color-02: rgba(255, 255, 255, 0.25);
 	--hover-color-01: rgba(255, 255, 255, 0.1);
 	--hover-color-02: rgba(255, 255, 255, 0.5);
 	--navbar-bg: rgba(255, 255, 255, 0.04);
 	--line-color: rgba(255, 255, 255, 0.25);
+	--circle-color: rgba(255, 255, 255, 0.175);
 
-	--clr-white: #fff;
+	/* font-families */
+	--ff-bellefair: 'Bellefair', serif;
+	--ff-barlow-cond: 'Barlow Condensed', sans-serif;
+	--ff-barlow: 'Barlow', sans-serif;
 }
 
 html {
@@ -26,7 +33,7 @@ html {
 }
 
 body {
-	font-family: 'Bellefair', serif;
+	font-family: var(--ff-bellefair);
 	font-size: 1.6rem;
 	line-height: 1.5;
 	color: var(--text-color-01);
@@ -34,6 +41,24 @@ body {
 	display: grid;
 	grid-template-rows: min-content 1fr;
 	overflow-x: hidden;
+
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+	@include respond(tab-port) {
+		background-position: bottom center;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-weight: 400;
 }
 
 img {

@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>00 Home - Space Tourism Website | Frontend Mentor</title>
+  <title>01 Destination - Space Tourism Website | Frontend Mentor</title>
 
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 </head>
 
-<body class="home-body">
+<body class="destination-body">
 
   <header>
     <!--======= LOGO =======-->
@@ -35,12 +35,12 @@
     <nav id="primary-navigation" data-visible="false" class="primary-navigation">
       <ul class="nav-items">
         <li>
-          <a href="./index.html" class="nav-text active">
+          <a href="./index.html" class="nav-text">
             <span aria-hidden="true">00</span>HOME
           </a>
         </li>
         <li>
-          <a href="./destination-moon.html" class="nav-text">
+          <a href="./destination-moon.html" class="nav-text active">
             <span aria-hidden="true">01</span>DESTINATION
           </a>
         </li>
@@ -61,21 +61,51 @@
     <div data-visible="false" class="nav-overlay"></div>
   </header>
 
-
-  <div class="grid-container">
-    <div class="text-container">
-      <h1>SO, YOU WANT TO TRAVEL TO</h1>
-      <span>SPACE</span>
-      <p>Let's face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind
-        of on the edge of it. Well sit back, and relax because we'll give you a truly out of this world experience!
-      </p>
+  <main class="grid-container--destination">
+    <!--======= INTRO TITLE =======-->
+    <div class="intro-title">
+      <h1><span>01</span>pick your destination</h1>
     </div>
-    <div class="btn-container">
-      <a href="./destination-moon.html" class="explore">EXPLORE</a>
+
+    <!--======= CONTENT =======-->
+    <div class="content">
+      <div class="destination-img">
+        <img src="./assets/destination/image-mars.png" alt="">
+      </div>
+      <div class="destination-details">
+        <nav class="destination-nav">
+          <ul>
+            <li>
+              <a href="./destination-moon.html">MOON</a>
+            </li>
+            <li>
+              <a href="./destination-mars.html" class="active">MARS</a>
+            </li>
+            <li>
+              <a href="./destination-europa.html">EUROPA</a>
+            </li>
+            <li>
+              <a href="./destination-titan.html">TITAN</a>
+            </li>
+          </ul>
+        </nav>
+        <span>MARS</span>
+        <p class="destination-description">Don't forget to pack your hiking boots. You'll need them to tackle Olympus
+          Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!
+        </p>
+        <div class="distance-time-container">
+          <div class="avg-distance">
+            <p>avg. distance</p>
+            <p>225 mil. km</p>
+          </div>
+          <div class="travel-time">
+            <p>est. travel time</p>
+            <p>9 months</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-
+  </main>
 
   <script src="./src/js/script.js"></script>
 </body>

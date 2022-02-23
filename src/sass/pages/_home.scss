@@ -1,222 +1,99 @@
-.home {
-	flex: 1;
-	height: 100%;
-	padding: 0 16.5rem 13.1rem;
+.grid-container {
+	padding-block-end: Max(6rem, 10vh);
+	align-items: end;
 
-	@include respond(bp-1200) {
-		padding: 0 10rem 10rem;
-	}
+	h1 {
+		font-family: var(--ff-barlow-cond);
+		font-size: 2.8rem;
+		letter-spacing: 4.72px;
+		color: var(--clr-secondary);
 
-	@include respond(tab-port) {
-		padding: 20.2rem 5rem 9rem;
-	}
-
-	@include respond(mobile) {
-		padding: 11.2rem 2.4rem 4.8rem;
-	}
-
-	.main-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		height: 100%;
-
-		@include respond(tab-port) {
-			grid-template-columns: 1fr;
-			justify-items: center;
-			align-content: space-between;
+		@include respond(tab-land) {
+			font-size: 2rem;
+			letter-spacing: 3.38px;
 		}
 
 		@include respond(mobile) {
-			align-content: unset;
+			font-size: 1.6rem;
+			letter-spacing: 2.7px;
+		}
+	}
+
+	span {
+		font-family: var(--ff-bellefair);
+		font-size: 15rem;
+
+		@include respond(tab-land) {
+			font-size: 12rem;
+			line-height: 15rem;
 		}
 
-		@include respond(mobileXS) {
-			align-content: space-between;
+		@include respond(mobile) {
+			font-size: 8rem;
+			line-height: 10rem;
+		}
+	}
+
+	p {
+		font-family: var(--ff-barlow);
+		font-size: 1.8rem;
+		line-height: 3.2rem;
+		color: var(--clr-secondary);
+		max-width: 45rem;
+
+		@include respond(tab-land) {
+			font-size: 1.6rem;
+			line-height: 2.8rem;
 		}
 
-		.text {
-			align-self: flex-end;
-			max-width: 45rem;
+		@include respond(mobile) {
+			font-size: 1.5rem;
+		}
+	}
 
-			@include respond(tab-port) {
-				align-self: unset;
-				text-align: center;
-			}
+	// .btn-container {
+	// 	justify-self: end;
+	// }
 
-			@include respond(bp-600) {
-				align-self: center;
-			}
+	.explore {
+		display: inline-grid;
+		place-items: center;
+		position: relative;
+		font-family: var(--ff-bellefair);
+		font-size: 3.2rem;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: var(--clr-primary);
+		background-color: var(--clr-white);
+		aspect-ratio: 1;
+		width: 27.4rem;
+		border-radius: 50%;
 
-			// @include respond(mobile) {
-			// 	margin-bottom: 8.1rem;
-			// }
-
-			// @include respond(mobileXS) {
-			// 	margin-bottom: 5.1rem;
-			// }
-
-			h5 {
-				font-weight: 400;
-				margin-bottom: 2.4rem;
-
-				@include respond(bp-1200) {
-					font-size: 2.2rem;
-				}
-
-				@include respond(tab-port) {
-					font-size: 2rem;
-					letter-spacing: 3.38px;
-				}
-
-				@include respond(bp-600) {
-					font-size: 1.9rem;
-				}
-
-				@include respond(mobile) {
-					font-size: 1.6rem;
-					letter-spacing: 2.7px;
-					margin-bottom: 1.6rem;
-				}
-
-				@include respond(mobileXS) {
-					font-size: 1.5rem;
-				}
-			}
-
-			h1 {
-				font-weight: 400;
-				margin-bottom: 2.4rem;
-
-				@include respond(bp-1200) {
-					font-size: 13rem;
-					line-height: 13rem;
-				}
-
-				@include respond(tab-port) {
-					line-height: 15rem;
-				}
-
-				@include respond(bp-600) {
-					font-size: 13rem;
-					line-height: 13rem;
-				}
-
-				@include respond(mobile) {
-					font-size: 8rem;
-					line-height: 10rem;
-					margin-bottom: 1.6rem;
-				}
-
-				@include respond(mobileXS) {
-					font-size: 7.2rem;
-					margin-bottom: 1rem;
-				}
-			}
-
-			p {
-				max-width: 44.4rem;
-				color: var(--color-secondary);
-
-				@include respond(bp-1200) {
-					max-width: 40rem;
-					font-size: 1.6rem;
-				}
-
-				@include respond(tab-port) {
-					font-size: 1.6rem;
-					line-height: 2.8rem;
-				}
-
-				@include respond(mobile) {
-					max-width: 32.7rem;
-					font-size: 1.5rem;
-					line-height: 2.5rem;
-				}
-
-				@include respond(mobileXS) {
-					font-size: 1.4rem;
-				}
-			}
+		@include respond(tab-land) {
+			width: 24.2rem;
 		}
 
-		.explore-btn {
-			align-self: flex-end;
-			justify-self: flex-end;
-			width: 27.4rem;
-			height: 27.4rem;
+		@include respond(mobile) {
+			font-size: 2rem;
+			letter-spacing: 1.25px;
+			width: 15rem;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
 			border-radius: 50%;
-			background-color: var(--text-color-01);
-			border: none;
-			outline: none;
-			position: relative;
-			cursor: pointer;
-			transition: box-shadow 0.3s ease;
+			background-color: var(--hover-color-01);
+			opacity: 0;
+			transition: opacity 0.3s linear, transform 0.3s ease;
+		}
 
-			@include respond(bp-1200) {
-				width: 24.2rem;
-				height: 24.2rem;
-			}
-
-			@include respond(tab-port) {
-				align-self: unset;
-				justify-self: unset;
-				width: 24.2rem;
-				height: 24.2rem;
-			}
-
-			@include respond(bp-600) {
-				width: 21rem;
-				height: 21rem;
-			}
-
-			@include respond(mobile) {
-				align-self: center;
-				width: 15rem;
-				height: 15rem;
-			}
-
-			@include respond(mobileXS) {
-				width: 13rem;
-				height: 13rem;
-			}
-
-			a {
-				font-family: 'Bellefair', sans-serif;
-				font-weight: 400;
-				font-size: 3.2rem;
-				letter-spacing: 2px;
-				color: var(--color-primary);
-
-				@include respond(bp-600) {
-					font-size: 2.8rem;
-					letter-spacing: 1.8px;
-				}
-
-				@include respond(mobile) {
-					font-size: 2rem;
-					letter-spacing: 1.25px;
-				}
-
-				@include respond(mobileXS) {
-					font-size: 1.7rem;
-				}
-			}
-
-			&:hover {
-				box-shadow: 0 0 0 8.8rem var(--hover-color-01);
-
-				@include respond(bp-1200) {
-					box-shadow: 0 0 0 6.8rem var(--hover-color-01);
-				}
-
-				@include respond(tab-port) {
-					box-shadow: 0 0 0 5.8rem var(--hover-color-01);
-				}
-
-				@include respond(mobile) {
-					box-shadow: 0 0 0 4.8rem var(--hover-color-01);
-				}
-			}
+		&:hover::after,
+		&:focus::after {
+			opacity: 1;
+			transform: scale(1.6);
 		}
 	}
 }
