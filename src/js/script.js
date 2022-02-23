@@ -3,6 +3,7 @@ const primaryNav = document.getElementById('primary-navigation');
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const navItems = document.querySelectorAll('.nav-items a');
 const overlay = document.querySelector('.nav-overlay');
+const crewPagination = document.querySelectorAll('.crew-pagination a');
 
 const openMobileNav = () => {
 	primaryNav.setAttribute('data-visible', true);
@@ -43,6 +44,34 @@ document.addEventListener('keydown', (e) => {
 		const visibility = primaryNav.getAttribute('data-visible');
 		if (visibility === 'true') {
 			closeMobileNav();
+		}
+	}
+
+	if (e.key === 'ArrowLeft') {
+		const activePage = window.location.pathname;
+
+		if (activePage.includes('commander')) {
+			window.location.href = './crew-engineer.html';
+		} else if (activePage.includes('specialist')) {
+			window.location.href = './crew-commander.html';
+		} else if (activePage.includes('pilot')) {
+			window.location.href = './crew-specialist.html';
+		} else if (activePage.includes('engineer')) {
+			window.location.href = './crew-pilot.html';
+		}
+	}
+
+	if (e.key === 'ArrowRight') {
+		const activePage = window.location.pathname;
+
+		if (activePage.includes('commander')) {
+			window.location.href = './crew-specialist.html';
+		} else if (activePage.includes('specialist')) {
+			window.location.href = './crew-pilot.html';
+		} else if (activePage.includes('pilot')) {
+			window.location.href = './crew-engineer.html';
+		} else if (activePage.includes('engineer')) {
+			window.location.href = './crew-commander.html';
 		}
 	}
 });
@@ -113,3 +142,5 @@ async function fetchData() {
 }
 
 fetchData();
+
+// LEFT AND RIGHT EVENT LISTENERS

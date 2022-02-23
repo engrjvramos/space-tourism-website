@@ -1,6 +1,41 @@
 .grid-container {
-	padding-block-end: Max(6rem, 10vh);
+	display: grid;
+	grid-template-columns:
+		minmax(8rem, 1fr)
+		repeat(2, minmax(0, 114rem))
+		minmax(8rem, 1fr);
+	place-items: center;
+	padding-block-end: 20rem;
 	align-items: end;
+
+	@include respond(tab-port) {
+		text-align: center;
+		padding-inline: 2.4rem;
+		grid-template-columns: 1fr;
+		padding-block-end: 15rem;
+	}
+
+	& > *:first-child {
+		grid-column: 2;
+
+		@include respond(tab-port) {
+			grid-column: unset;
+		}
+	}
+
+	& > *:last-child {
+		grid-column: 3;
+
+		@include respond(tab-land) {
+			justify-self: end;
+		}
+
+		@include respond(tab-port) {
+			grid-column: unset;
+			justify-self: unset;
+			align-self: end;
+		}
+	}
 
 	h1 {
 		font-family: var(--ff-barlow-cond);

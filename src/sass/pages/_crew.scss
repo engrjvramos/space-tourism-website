@@ -1,128 +1,77 @@
 .grid-container--crew {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 2rem;
-	padding-block-start: 7.6rem;
-	padding-inline: 16.5rem;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content 1fr;
+	row-gap: 2.6rem;
+	margin-block-start: 7.6rem;
+	padding-inline-start: 16.5rem;
+	overflow-x: hidden;
 
 	@include respond(bp-1400) {
-		padding-inline: 9rem;
-	}
-
-	@include respond(bp-1200) {
-		padding-inline: 6rem;
+		padding-inline-start: 8rem;
+		margin-block-start: 4rem;
+		row-gap: 6rem;
 	}
 
 	@include respond(tab-land) {
-		padding-inline: 4rem;
+		margin-block-end: 0;
 	}
 
 	@include respond(tab-port) {
-		grid-template-columns: 1fr;
-		row-gap: 4rem;
-		padding-block-start: 4rem;
-	}
-
-	@include respond(mobile) {
-		padding-block-start: 2.4rem;
-		padding-block-end: 4.4rem;
+		padding-inline: 0;
+		margin-block-end: 0;
 		padding-inline: 2.4rem;
 	}
 
-	.text-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding-block-end: 9rem;
-		max-width: 100%;
+	@include respond(mobile) {
+		margin-block-start: 2.4rem;
+		padding-block-end: 4.4rem;
+		row-gap: 3.2rem;
+	}
 
-		@include respond(tab-land) {
-			justify-content: center;
-			row-gap: 8rem;
-		}
-
+	.intro-title {
 		@include respond(tab-port) {
-			justify-content: flex-start;
-			row-gap: 0;
-			height: min-content;
-			padding-block-end: 0;
+			margin-inline-start: 3.85rem;
 		}
 
 		@include respond(mobile) {
-			height: auto;
-			justify-content: unset;
-			display: grid;
-			place-items: center;
+			margin-inline-start: 0;
+		}
+	}
+
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 2rem;
+
+		@include respond(laptop) {
+			justify-content: initial;
 		}
 
-		.crew-img-mobile {
-			position: relative;
-			display: none;
-			place-items: center;
-			height: 22.2rem;
-			width: 100%;
-			margin-block: 3.2rem;
-			border-bottom: 1px solid #383b4b;
-
-			@include respond(mobile) {
-				display: grid;
-			}
-
-			img {
-				height: 22.2rem;
-				position: absolute;
-				bottom: 0;
-				max-height: 100%;
-				object-fit: contain;
-			}
+		@include respond(tab-port) {
+			flex-direction: column;
+			justify-content: space-evenly;
+			row-gap: 4rem;
 		}
 
-		.crew-pagination-mobile {
-			display: none;
-			align-items: center;
+		@include respond(mobile) {
+			row-gap: 3.2rem;
+		}
+
+		.details {
+			display: flex;
+			flex-direction: column;
 			justify-content: center;
-			column-gap: 1.6rem;
+			height: 100%;
+			width: 100%;
+			margin-block-end: 5rem;
 
-			@include respond(mobile) {
-				display: flex;
-			}
-
-			.circle {
-				width: 1.5rem;
-				height: 1.5rem;
-				border-radius: 50%;
-				background-color: var(--circle-color);
-				cursor: pointer;
-				transition: background-color 0.3s ease;
-
-				@include respond(tab-land) {
-					width: 1.2rem;
-					height: 1.2rem;
-				}
-
-				@include respond(tab-port) {
-					width: 1rem;
-					height: 1rem;
-				}
-
-				&:hover {
-					background-color: var(--hover-color-02);
-				}
-
-				&.active {
-					background-color: var(--clr-white);
-				}
-			}
-		}
-
-		.main-details {
 			@include respond(tab-port) {
-				margin-top: 6rem;
 				text-align: center;
-			}
-
-			@include respond(mobile) {
-				margin-top: 3.2rem;
+				justify-content: initial;
+				height: auto;
+				margin-block-end: 0;
 			}
 
 			h1 {
@@ -131,17 +80,13 @@
 				color: var(--hover-color-02);
 				text-transform: uppercase;
 				margin-block-end: 1.5rem;
+				animation: fadeLeft 1s ease;
 
 				@include respond(bp-1400) {
 					font-size: 3rem;
 				}
 
 				@include respond(tab-land) {
-					font-size: 2.6rem;
-					margin-block-end: 1.2rem;
-				}
-
-				@include respond(tab-port) {
 					font-size: 2.4rem;
 					margin-block-end: 0.8rem;
 				}
@@ -152,26 +97,14 @@
 			}
 
 			span {
-				display: inline-block;
+				display: block;
 				font-family: var(--ff-bellefair);
 				font-size: 5.6rem;
 				text-transform: uppercase;
 				margin-block-end: 2.7rem;
-
-				@include respond(laptop) {
-					font-size: 4.6rem;
-				}
-
-				@include respond(bp-1200) {
-					font-size: 4.2rem;
-				}
+				animation: fadeLeft 1s ease;
 
 				@include respond(tab-land) {
-					font-size: 4.2rem;
-					margin-block-end: 2rem;
-				}
-
-				@include respond(tab-port) {
 					font-size: 4rem;
 					margin-block-end: 1.6rem;
 				}
@@ -187,16 +120,19 @@
 				font-size: 1.8rem;
 				line-height: 3.2rem;
 				color: var(--clr-secondary);
+				margin-bottom: 12rem;
+				height: 16rem;
+				animation: fadeLeft 1s ease;
 
 				@include respond(tab-land) {
-					font-size: 1.7rem;
+					font-size: 1.6rem;
+					line-height: 2.8rem;
 				}
 
 				@include respond(tab-port) {
 					max-width: 60rem;
+					height: auto;
 					margin: 0 auto;
-					font-size: 1.6rem;
-					line-height: 2.8rem;
 					margin-block-end: 4rem;
 				}
 
@@ -213,73 +149,105 @@
 					height: auto;
 				}
 			}
+
+			.crew-pagination {
+				display: flex;
+				align-items: center;
+				column-gap: 2.4rem;
+
+				@include respond(tab-port) {
+					justify-content: center;
+					column-gap: 1.6rem;
+				}
+
+				@include respond(mobile) {
+					order: -1;
+					margin-block-end: 3.2rem;
+				}
+
+				.circle {
+					width: 1.5rem;
+					height: 1.5rem;
+					border-radius: 50%;
+					background-color: var(--circle-color);
+					cursor: pointer;
+					transition: background-color 0.3s ease;
+
+					@include respond(tab-land) {
+						width: 1.2rem;
+						height: 1.2rem;
+					}
+
+					@include respond(tab-port) {
+						width: 1rem;
+						height: 1rem;
+					}
+
+					&:hover {
+						background-color: var(--hover-color-02);
+					}
+
+					&.active {
+						background-color: var(--clr-white);
+					}
+				}
+			}
 		}
 
-		.crew-pagination {
-			display: flex;
-			align-items: center;
-			column-gap: 2.4rem;
+		.crew-img {
+			position: relative;
+			display: grid;
+			height: 100%;
+			width: 100%;
+			border-bottom: 1px solid #383b4b;
+			animation: fadeUp 1s ease;
+
+			@include respond(tab-land) {
+				height: 53.2rem;
+			}
 
 			@include respond(tab-port) {
-				justify-content: center;
-				column-gap: 1.6rem;
+				place-items: center;
 			}
 
 			@include respond(mobile) {
-				display: none;
+				order: -1;
+				height: Max(22.2rem, 32vh);
 			}
 
-			.circle {
-				width: 1.5rem;
-				height: 1.5rem;
-				border-radius: 50%;
-				background-color: var(--circle-color);
-				cursor: pointer;
-				transition: background-color 0.3s ease;
-
-				@include respond(tab-land) {
-					width: 1.2rem;
-					height: 1.2rem;
-				}
-
-				@include respond(tab-port) {
-					width: 1rem;
-					height: 1rem;
-				}
-
-				&:hover {
-					background-color: var(--hover-color-02);
-				}
-
-				&.active {
-					background-color: var(--clr-white);
-				}
-			}
-		}
-	}
-
-	.crew-img {
-		position: relative;
-		display: grid;
-		place-items: center;
-
-		@include respond(tab-port) {
-			height: 53.2rem;
-		}
-
-		@include respond(mobile) {
-			display: none;
-		}
-
-		img {
-			position: absolute;
-			bottom: 0;
-			max-height: 100%;
-			object-fit: contain;
-
-			@include respond(tab-port) {
+			img {
+				position: absolute;
+				bottom: 0;
 				height: 100%;
 			}
 		}
+	}
+}
+
+@keyframes fadeUp {
+	0% {
+		transform: translateY(5rem);
+		opacity: 0;
+		visibility: none;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes fadeLeft {
+	0% {
+		transform: translateX(-20rem);
+		opacity: 0;
+		visibility: none;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
 	}
 }
