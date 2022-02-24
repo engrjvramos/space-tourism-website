@@ -240,26 +240,26 @@
 		}
 
 		.vehicle {
-			background-image: url(../../../assets/technology/image-launch-vehicle-portrait.jpg);
+			background-image: url(../assets/technology/image-launch-vehicle-portrait.jpg);
 
 			@include respond(tab-port) {
-				background-image: url(../../../assets/technology/image-launch-vehicle-landscape.jpg);
+				background-image: url(../assets/technology/image-launch-vehicle-landscape.jpg);
 			}
 		}
 
 		.spaceport {
-			background-image: url(../../../assets/technology/image-spaceport-portrait.jpg);
+			background-image: url(../assets/technology/image-spaceport-portrait.jpg);
 
 			@include respond(tab-port) {
-				background-image: url(../../../assets/technology/image-spaceport-landscape.jpg);
+				background-image: url(../assets/technology/image-spaceport-landscape.jpg);
 			}
 		}
 
 		.capsule {
-			background-image: url(../../../assets/technology/image-space-capsule-portrait.jpg);
+			background-image: url(../assets/technology/image-space-capsule-portrait.jpg);
 
 			@include respond(tab-port) {
-				background-image: url(../../../assets/technology/image-space-capsule-landscape.jpg);
+				background-image: url(../assets/technology/image-space-capsule-landscape.jpg);
 			}
 		}
 	}
