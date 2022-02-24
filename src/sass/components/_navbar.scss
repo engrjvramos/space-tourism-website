@@ -16,11 +16,25 @@ header {
 	}
 
 	.logo {
+		flex-shrink: 0;
 		aspect-ratio: 1;
+		margin-right: 3.4rem;
 		z-index: 9999;
 
 		@include respond(bp-600) {
 			width: 4rem;
+		}
+	}
+
+	.hr {
+		width: 100%;
+		background-color: var(--line-color);
+		height: 1px;
+		transform: translateX(3rem);
+		z-index: 9999;
+
+		@include respond(tab-port) {
+			display: none;
 		}
 	}
 
@@ -83,7 +97,8 @@ header {
 	}
 
 	.primary-navigation {
-		background-color: hsla(0, 0%, 0%, 0.75);
+		background-color: var(--navbar-bg);
+		backdrop-filter: blur(1.6rem);
 		transition: transform 0.3s ease;
 		z-index: 1000;
 		padding-inline: clamp(3rem, 12vw, 40rem);
@@ -97,7 +112,6 @@ header {
 		}
 
 		@include respond(bp-600) {
-			background-color: hsla(0, 0%, 0%, 0.75);
 			position: fixed;
 			inset: 0 0 0 30%;
 			padding: Min(25vh, 12rem) 3.2rem;
@@ -151,13 +165,6 @@ header {
 					display: inline-block;
 				}
 			}
-		}
-	}
-
-	@supports (backdrop-filter: blur(1rem)) {
-		.primary-navigation {
-			background-color: var(--navbar-bg);
-			backdrop-filter: blur(1.6rem);
 		}
 	}
 
