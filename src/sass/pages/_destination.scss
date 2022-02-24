@@ -2,49 +2,71 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: min-content 1fr;
-	row-gap: 6.4rem;
+	row-gap: 2.6rem;
+	margin-block-start: 7.6rem;
+	margin-block-end: 10rem;
 	padding-inline: 16.5rem;
-	padding-block-start: 7.6rem;
-	padding-block-end: 12rem;
+	overflow-x: hidden;
+
+	@include respond(bp-1400) {
+		padding-inline: 8rem;
+		margin-block-start: 4rem;
+		row-gap: 4rem;
+	}
 
 	@include respond(bp-1200) {
-		padding-inline: 6rem;
-		padding-block-end: 6rem;
+		margin-block-end: 5rem;
 	}
 
 	@include respond(tab-port) {
-		row-gap: 4rem;
-		padding-inline: 3.85rem;
-		padding-block-start: 4rem;
-		padding-block-end: 5.2rem;
+		padding-inline: 0;
+		margin-block-end: 4rem;
 	}
 
 	@include respond(mobile) {
+		margin-block-start: 2.4rem;
+		margin-block-end: initial;
+		padding-block-end: 5rem;
 		row-gap: 3.2rem;
-		padding-inline: 2.4rem;
-		padding-block-start: 2.4rem;
-		padding-block-end: 5.8rem;
 	}
 
-	.content {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		place-items: center;
-		column-gap: 5rem;
-		row-gap: 4rem;
-
+	.intro-title {
 		@include respond(tab-port) {
-			grid-template-columns: 1fr;
-			place-items: unset;
-			align-content: space-between;
-			justify-items: center;
+			margin-inline-start: 3.85rem;
 		}
 
 		@include respond(mobile) {
+			margin-inline-start: 0;
+		}
+	}
+
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		column-gap: 8rem;
+
+		@include respond(laptop) {
+			justify-content: space-between;
+		}
+
+		@include respond(bp-1400) {
+			justify-content: space-evenly;
+		}
+
+		@include respond(tab-land) {
+			column-gap: 4rem;
+		}
+
+		@include respond(tab-port) {
+			flex-direction: column;
+			margin-inline: 4rem;
+			row-gap: 5.6rem;
+		}
+
+		@include respond(mobile) {
+			margin-inline: 2.4rem;
 			row-gap: 2.6rem;
-			place-items: center;
-			align-content: unset;
-			justify-items: unset;
 		}
 
 		.destination-img {
@@ -85,6 +107,10 @@
 
 					@include respond(mobile) {
 						column-gap: 2.7rem;
+					}
+
+					@include respond(mobileXS) {
+						column-gap: 2rem;
 					}
 
 					li {
@@ -129,6 +155,10 @@
 				@include respond(mobile) {
 					font-size: 5.6rem;
 				}
+
+				@include respond(mobileXS) {
+					font-size: 5rem;
+				}
 			}
 
 			.destination-description {
@@ -147,10 +177,15 @@
 				}
 
 				@include respond(mobile) {
+					height: 15rem;
 					font-size: 1.5rem;
 					line-height: 2.5rem;
 					padding-bottom: 3.2rem;
 					margin-bottom: 3.2rem;
+				}
+
+				@include respond(mobileXS) {
+					height: auto;
 				}
 			}
 
@@ -175,6 +210,14 @@
 				p:last-of-type {
 					font-family: var(--ff-bellefair);
 					font-size: 2.8rem;
+
+					@include respond(mobile) {
+						font-size: 2.6rem;
+					}
+
+					@include respond(mobileXS) {
+						font-size: 2.4rem;
+					}
 				}
 			}
 		}

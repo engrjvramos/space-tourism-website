@@ -47,9 +47,61 @@ document.addEventListener('keydown', (e) => {
 		}
 	}
 
+	if (e.key === '0') {
+		window.location.href = './index.html';
+	}
+
+	if (e.key === '1') {
+		window.location.href = './destination-moon.html';
+	}
+
+	if (e.key === '2') {
+		window.location.href = './crew-commander.html';
+	}
+
+	if (e.key === '3') {
+		window.location.href = './technology-vehicle.html';
+	}
+
+	if (e.key === 'ArrowUp') {
+		const activePage = window.location.pathname;
+
+		if (activePage.includes('vehicle')) {
+			window.location.href = './technology-capsule.html';
+		} else if (activePage.includes('spaceport')) {
+			window.location.href = './technology-vehicle.html';
+		} else if (activePage.includes('capsule')) {
+			window.location.href = './technology-spaceport.html';
+		}
+	}
+
+	if (e.key === 'ArrowDown') {
+		const activePage = window.location.pathname;
+
+		if (activePage.includes('vehicle')) {
+			window.location.href = './technology-spaceport.html';
+		} else if (activePage.includes('spaceport')) {
+			window.location.href = './technology-capsule.html';
+		} else if (activePage.includes('capsule')) {
+			window.location.href = './technology-vehicle.html';
+		}
+	}
+
 	if (e.key === 'ArrowLeft') {
 		const activePage = window.location.pathname;
 
+		/* DESTINATION - PAGINATION */
+		if (activePage.includes('moon')) {
+			window.location.href = './destination-titan.html';
+		} else if (activePage.includes('mars')) {
+			window.location.href = './destination-moon.html';
+		} else if (activePage.includes('europa')) {
+			window.location.href = './destination-mars.html';
+		} else if (activePage.includes('titan')) {
+			window.location.href = './destination-europa.html';
+		}
+
+		/* CREW - PAGINATION */
 		if (activePage.includes('commander')) {
 			window.location.href = './crew-engineer.html';
 		} else if (activePage.includes('specialist')) {
@@ -59,11 +111,32 @@ document.addEventListener('keydown', (e) => {
 		} else if (activePage.includes('engineer')) {
 			window.location.href = './crew-pilot.html';
 		}
+
+		/* TECHNOLOGY - PAGINATION */
+		if (activePage.includes('vehicle')) {
+			window.location.href = './technology-capsule.html';
+		} else if (activePage.includes('spaceport')) {
+			window.location.href = './technology-vehicle.html';
+		} else if (activePage.includes('capsule')) {
+			window.location.href = './technology-spaceport.html';
+		}
 	}
 
 	if (e.key === 'ArrowRight') {
 		const activePage = window.location.pathname;
 
+		/* DESTINATION - PAGINATION */
+		if (activePage.includes('moon')) {
+			window.location.href = './destination-mars.html';
+		} else if (activePage.includes('mars')) {
+			window.location.href = './destination-europa.html';
+		} else if (activePage.includes('europa')) {
+			window.location.href = './destination-titan.html';
+		} else if (activePage.includes('titan')) {
+			window.location.href = './destination-moon.html';
+		}
+
+		/* CREW - PAGINATION */
 		if (activePage.includes('commander')) {
 			window.location.href = './crew-specialist.html';
 		} else if (activePage.includes('specialist')) {
@@ -72,6 +145,15 @@ document.addEventListener('keydown', (e) => {
 			window.location.href = './crew-engineer.html';
 		} else if (activePage.includes('engineer')) {
 			window.location.href = './crew-commander.html';
+		}
+
+		/* TECHNOLOGY - PAGINATION */
+		if (activePage.includes('vehicle')) {
+			window.location.href = './technology-spaceport.html';
+		} else if (activePage.includes('spaceport')) {
+			window.location.href = './technology-capsule.html';
+		} else if (activePage.includes('capsule')) {
+			window.location.href = './technology-vehicle.html';
 		}
 	}
 });
