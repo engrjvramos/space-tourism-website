@@ -80,6 +80,7 @@
 				color: var(--hover-color-02);
 				text-transform: uppercase;
 				margin-block-end: 1.5rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(bp-1400) {
 					font-size: 3rem;
@@ -101,6 +102,7 @@
 				font-size: 5.6rem;
 				text-transform: uppercase;
 				margin-block-end: 2.7rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(tab-land) {
 					font-size: 4rem;
@@ -120,6 +122,7 @@
 				color: var(--clr-secondary);
 				margin-bottom: 12rem;
 				height: 16rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(tab-land) {
 					font-size: 1.6rem;
@@ -197,6 +200,7 @@
 			height: 100%;
 			width: 100%;
 			border-bottom: 1px solid #383b4b;
+			animation: fadeDown 1s ease;
 
 			@include respond(tab-land) {
 				height: 53.2rem;

@@ -41,6 +41,8 @@
 	}
 
 	.intro-text {
+		animation: moveInLeft 1s ease;
+
 		@include respond(tab-port) {
 			text-align: center;
 		}
@@ -96,6 +98,7 @@
 	}
 
 	.btn-container {
+		animation: moveInRight 1s ease;
 		.explore {
 			display: inline-grid;
 			place-items: center;

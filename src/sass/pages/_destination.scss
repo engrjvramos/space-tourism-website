@@ -45,6 +45,7 @@
 		align-items: center;
 		justify-content: space-evenly;
 		column-gap: 8rem;
+		animation: scrollHide 3s;
 
 		@include respond(laptop) {
 			justify-content: space-between;
@@ -71,6 +72,7 @@
 
 		.destination-img {
 			place-self: center;
+			animation: fadeDown 1s ease;
 
 			@include respond(bp-1200) {
 				max-width: 38rem;
@@ -147,6 +149,7 @@
 				display: block;
 				font-family: var(--ff-bellefair);
 				font-size: 10rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(tab-port) {
 					font-size: 8rem;
@@ -169,6 +172,7 @@
 				padding-bottom: 5.4rem;
 				border-bottom: 1px solid #383b4b;
 				margin-bottom: 2.8rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(tab-port) {
 					font-size: 1.6rem;
@@ -193,6 +197,7 @@
 				text-transform: uppercase;
 				display: grid;
 				grid-template-columns: 1fr 1fr;
+				animation: fadeUp 1s ease;
 
 				@include respond(mobile) {
 					grid-template-columns: 1fr;

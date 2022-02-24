@@ -45,6 +45,7 @@
 		align-items: center;
 		justify-content: center;
 		column-gap: 8rem;
+		animation: scrollHide 3s;
 
 		@include respond(laptop) {
 			justify-content: initial;
@@ -161,6 +162,7 @@
 				font-size: 5.6rem;
 				text-transform: uppercase;
 				margin-bottom: 1.7rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(tab-land) {
 					font-size: 4rem;
@@ -178,6 +180,7 @@
 				line-height: 3.2rem;
 				color: var(--clr-secondary);
 				max-width: 60rem;
+				animation: fadeUp 1s ease;
 
 				@include respond(laptop) {
 					max-width: 44.4rem;
@@ -213,6 +216,7 @@
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: right;
+			animation: fadeDown 1s ease;
 
 			@include respond(laptop) {
 				height: 52.7rem;
