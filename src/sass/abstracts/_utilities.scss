@@ -73,7 +73,7 @@
 }
 
 .home-body {
-	background-image: url(../assets/home/background-home-tablet.jpg);
+	background-image: url(../assets/home/background-home-desktop.jpg);
 
 	@include respond(tab-port) {
 		background-image: url(../assets/home/background-home-tablet.jpg);
