@@ -29,10 +29,9 @@ Users should be able to:
 
 | Function               | Description                                                                |
 | :--------------------- | :------------------------------------------------------------------------- |
-| Hamburger Menu         | Responsive & functional menu appears on tablet & mobile screens.           |
 | Custom CSS Animations  | Includes css animations when cycling through each page.                    |
-| Design Layouts         | Includes custom layouts for desktop, tablet and mobile screens.            |
 | Keyboard Functionality | Includes keydown events (Escape, Arrow Keys & Numbers 0-3) functionality.  |
+| Responsive Design      | Automatically adjusts the design layout for different screen sizes.        |
 
 
 ### Resources
